@@ -109,7 +109,7 @@ def pre_save_image(sender, instance, *args, **kwargs):
     try:
         old_img = instance.__class__.objects.get(id=instance.id).photo.path
         try:
-            new_img = instance.image.path
+            new_img = instance.photo.path
         except:
             new_img = None
         if new_img != old_img:
